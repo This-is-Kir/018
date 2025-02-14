@@ -1,7 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head> <link rel="stylesheet" href="style.css"> </head>
+<head> <link rel="stylesheet" href="style.css"> 
+ <script type="text/javascript">
+function showDate() {
+var d = new Date();
+var curr_date = d.getDate();
+var curr_month = d.getMonth() + 1; //months are zero based
+var curr_year = d.getFullYear();
+document.write(curr_date + "-" + curr_month + "-" + curr_year);
+}
+</script>
+</head>
 <body>
+  <script type="text/javascript">
+       
+     document.ondragstart = prohibit;
+      
+     document.onselectstart = prohibit;
+       
+     document.oncontextmenu = prohibit;
+       
+     function prohibit() {
+           return false;
+       }
+   
+   </script>
+  <script type="text/javascript">showDate();</script>
+  <a href="javascript:window.print();">Print Page</a>
+<script type="text/javascript">
+function f1() {
+if(document.all) { return false; }
+}
+function f2(e) {
+if(document.layers || (document.getElementById &! document.all)) {
+if(e.which==2 || e.which==3) { return false; }
+}
+}
+if(document.layers) {
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown = f1;
+}
+else {
+document.onmouseup = f2;
+document.oncontextmenu = f1;
+}
+document.oncontextmenu = new function("return false");
+</script>
 <div class="container">
   <header class="header">
     <h1>практическая 18</h1>
